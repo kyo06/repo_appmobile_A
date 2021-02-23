@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import NavBar from "../NavBar";
 import Title from "../Title";
 import VolsAller from "../VolsAller/VolsAller";
+import Buttons from "../Buttons";
 
 const SelectTrip = () => {
 
@@ -49,7 +50,7 @@ const SelectTrip = () => {
           key= {t.id} 
           />
       ))}
-    
+    <Buttons>Réserver</Buttons>
     </>
   );
 };

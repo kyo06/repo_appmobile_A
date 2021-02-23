@@ -8,11 +8,14 @@ const VolsAller = ({vols}) => {
 
   return (
     <>
-    
-    <p className={css.lign}>Aller :  {vols.AeroportDep + " à déstination de " + vols.AeroportArv}</p>
+        <div>    
+          <img src="miniPlane.jpg" alt="icon miniplane" height="20"/>
+          <p className={css.lign}>Aller :  {vols.AeroportDep + " à déstination de " + vols.AeroportArv}</p>
+        </div>
+
         <div className={css.orange}>
-        <p>{vols.Date + " -> " + vols.Prix}</p>
-        <p>Dép {vols.HeureDep + " Arr " + vols.HeureArr}</p>
+          <p>{vols.Date + " -> " + vols.Prix}</p>
+          <p>Dép {vols.HeureDep + " Arr " + vols.HeureArr}</p>
        </div>
     </>
   );
