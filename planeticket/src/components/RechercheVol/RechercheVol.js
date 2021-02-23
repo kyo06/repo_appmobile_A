@@ -9,6 +9,8 @@ import "react-datepicker/dist/react-datepicker.css";
 const RechercheVol = () => {
   
 const [startDate, setStartDate] = useState(new Date());
+const [endDate, setEndDate] = useState(new Date());
+
     return (
     <> 
     <Form>
@@ -31,7 +33,7 @@ const [startDate, setStartDate] = useState(new Date());
       <p>Du :
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> </p>
       <p>Au :
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> </p>
+      <DatePicker selected={endDate} onChange={date => setEndDate(date)} /> </p>
     </>
     );
 };
