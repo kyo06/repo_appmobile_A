@@ -1,7 +1,10 @@
 import React from "react";
+import NavBar from "../NavBar";
 
 const SelectTrip = () => {
-  return <div>SelectTrip</div>;
+  return (
+    <NavBar />
+  );
 };
 
 export default SelectTrip;
