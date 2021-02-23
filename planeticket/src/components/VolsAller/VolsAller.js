@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import ListGroup from 'react-bootstrap/ListGroup';
+// import ListGroup from 'react-bootstrap/ListGroup';
+import css from "./VolsAller.module.css";
 
 
 const VolsAller = ({vols}) => {
@@ -8,11 +8,12 @@ const VolsAller = ({vols}) => {
 
   return (
     <>
-    <p>Aller : Lyon à destination de Barcelone</p>
-    <ListGroup>
-      <ListGroup.Item>{vols.AeroportArv + " " + vols.AeroportArv}</ListGroup.Item>
-  
-    </ListGroup>
+    
+    <p className={css.lign}>Aller :  {vols.AeroportDep + " à déstination de " + vols.AeroportArv}</p>
+        <div className={css.orange}>
+        <p>{vols.Date + " -> " + vols.Prix}</p>
+        <p>Dép {vols.HeureDep + " Arr " + vols.HeureArr}</p>
+       </div>
     </>
   );
 };

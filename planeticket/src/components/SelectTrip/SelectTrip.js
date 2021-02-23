@@ -10,24 +10,33 @@ const SelectTrip = () => {
       id:1,
       AeroportDep:"Lyon",
       AeroportArv:"Madrid",
+      Date:"Dim.22 Fév",
+      Prix:"57,00€",
+      HeureDep:"12:35",
+      HeureArr:"14:25",
     },
     {
       id:2,
       AeroportDep:"Lyon",
       AeroportArv:"Madrid",
+      Date:"Lun.22 Fév",
+      Prix:"35,00€",
+      HeureDep:"12:35",
+      HeureArr:"14:25",
     },
     {
       id:3,
       AeroportDep:"Lyon",
       AeroportArv:"Madrid",
+      Date:"Mar.22 Fév",
+      Prix:"26,00€",
+      HeureDep:"12:35",
+      HeureArr:"14:25",
     },
-    {
-      id:4,
-      AeroportDep:"Lyon",
-      AeroportArv:"Madrid",
-    },
+ 
 
     ];
+
   const [list, setList] = useState(initialList);
 
   return (

@@ -1,5 +1,5 @@
 import "./App.css";
-import HomePage from "../HomePage/HomePage.js";
+// import HomePage from "../HomePage/HomePage.js";
 import SelectTrip from "../SelectTrip/SelectTrip.js";
 
 
