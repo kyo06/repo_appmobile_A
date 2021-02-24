@@ -13,9 +13,9 @@ const VolsAller = ({vols}) => {
           </div>
 
           <div className={css.orange}>
-            <p>{vols.Date + " -> " + vols.Prix}</p>
-            <p>Dép {vols.HeureDep + " Arr " + vols.HeureArr}</p>
-        
+            <label>{vols.Date + " -> " + vols.Prix} <br />
+            Dép {vols.HeureDep + " Arr " + vols.HeureArr}</label> 
+            <input className={css.checkbox} type="checkbox" id="volsAller" name="volsAller" />
           </div>
     </>
   );
