@@ -8,12 +8,11 @@ const VolAller = ({vols}) => {
          
 
           <div className={css.orange}>
-          <p>Aller :  {vols.AeroportDep + " -> " + vols.AeroportArv} <br />
-            {vols.Date + " -> " + vols.Prix} <br />
-            Dép {vols.HeureDep + " Arr " + vols.HeureArr} <br />
-            Vos Tarifs : {vols.TypePers + " " + vols.NbPers + " x " + vols.Prix}
-          </p>
-        
+            <p>Aller :  {vols.AeroportDep + " -> " + vols.AeroportArv} <br />
+              {vols.Date + " -> " + vols.Prix} <br />
+              Dép {vols.HeureDep + " Arr " + vols.HeureArr} <br />
+              Vos Tarifs : {vols.TypePers + " " + vols.NbPers + " x " + vols.Prix} €
+            </p>
           </div>
     </>
   );

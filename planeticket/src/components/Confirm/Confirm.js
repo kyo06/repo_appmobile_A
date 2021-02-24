@@ -4,6 +4,7 @@ import Title from "../Title";
 import Buttons from "../Buttons";
 import VolAller from "../VolAller";
 import VolRetour from "../VolRetour";
+import Total from "../Total";
 
 
 const Confirm = () => {
@@ -15,11 +16,11 @@ const Confirm = () => {
       AeroportArv:"Madrid",
       Date:"Dim.22 Fév",
       DateR:"Jeu.25 Fév",
-      Prix:"26,00€",
+      Prix:26,
       HeureDep:"12:35",
       HeureArr:"14:25",
       TypePers:"Adulte",
-      NbPers:"2"
+      NbPers:2
     },
   ];
 
@@ -44,6 +45,14 @@ const Confirm = () => {
           key= {t.id} 
           />
       ))}
+
+{list.map((t) => (
+        <Total
+          vols={t}
+          key= {t.id} 
+          />
+      ))}
+
 
 
     <Buttons>Accéder au paiement</Buttons>
