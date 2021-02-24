@@ -5,7 +5,10 @@ import Buttons from "../Buttons";
 import VolAller from "../VolAller";
 import VolRetour from "../VolRetour";
 import Total from "../Total";
+import css from './Confirm.module.css'
 
+
+import {ListAller} from "../../utils/ListAller";
 
 const Confirm = () => {
 
@@ -24,10 +27,11 @@ const Confirm = () => {
     },
   ];
 
-  const [list, setList] = useState(initialList);
+  const [list, setList] = useState(ListAller);
 
   return (
     <>
+    <div className={css.container}>
     <NavBar />
 
     <Title>Confirmer votre réservation</Title>
@@ -39,14 +43,14 @@ const Confirm = () => {
           />
       ))}
 
-{list.map((t) => (
+  {list.map((t) => (
         <VolRetour
           vols={t}
           key= {t.id} 
           />
       ))}
 
-{list.map((t) => (
+  {list.map((t) => (
         <Total
           vols={t}
           key= {t.id} 
@@ -56,6 +60,7 @@ const Confirm = () => {
 
 
     <Buttons>Accéder au paiement</Buttons>
+    </div>
     </>
   );
 

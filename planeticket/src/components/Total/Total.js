@@ -1,4 +1,5 @@
 import React from "react";
+import css from './Total.module.css'
 
 const Total = ({vols}) => {
 
@@ -10,9 +11,14 @@ const Total = ({vols}) => {
       </div>
 
       <div>
-        <p>TOTAL : </p>
+        <p className={css.total}>TOTAL : {(vols.Prix)*(vols.NbPers)} € </p>
+      </div>
+      <div>
+        <p className={css.italic}>Non remboursable. Modifiable sous réserve de frais. <br />
+        Le prix inclut tous les frais et taxes applicables.</p>
       </div>
 </>
+
   )
 
 

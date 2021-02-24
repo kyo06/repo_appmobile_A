@@ -1,0 +1,12 @@
+.italic{
+    font-style: italic;
+}
+
+.total{
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: underline;
+    color: red;
+    text-align: right;
+    margin-right: 10px;
+}
