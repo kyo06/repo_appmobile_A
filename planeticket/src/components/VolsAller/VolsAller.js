@@ -2,7 +2,7 @@
 import css from "./VolsAller.module.css";
 
 
-const VolsAller = ({vols}) => {
+const VolsAller = ({vols, color}) => {
 
 
 
@@ -11,7 +11,7 @@ const VolsAller = ({vols}) => {
           <div>    
              <p className={css.lign}><img src="miniPlane.jpg" alt="icon miniplane" height="20"/> Aller :  {vols.AeroportDep + " à déstination de " + vols.AeroportArv}</p>
           </div>
-
+          
           <div className={css.orange}>
             <label>{vols.Date + " -> " + vols.Prix} <br />
             Dép {vols.HeureDep + " Arr " + vols.HeureArr}</label> 
