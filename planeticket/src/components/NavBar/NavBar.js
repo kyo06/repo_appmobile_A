@@ -13,6 +13,18 @@ const NavBar = () => {
     <Nav className="mr-auto">
       <Nav.Link href="/">Home</Nav.Link>
     </Nav>
+    <Nav className="mr-auto">
+      <Nav.Link href="/select">Select</Nav.Link>
+    </Nav>
+    <Nav className="mr-auto">
+      <Nav.Link href="/confirm">Confirm</Nav.Link>
+    </Nav>
+    <Nav className="mr-auto">
+      <Nav.Link href="/reservation">Reservation</Nav.Link>
+    </Nav>
+    <Nav className="mr-auto">
+      <Nav.Link href="/user">Profil</Nav.Link>
+    </Nav>
   </Navbar.Collapse>
 </Navbar>
   )
