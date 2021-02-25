@@ -2,6 +2,7 @@ import "./App.css";
 import HomePage from "../HomePage/HomePage.js";
 import SelectTrip from "../SelectTrip/SelectTrip.js";
 import Confirm from "../Confirm/Confirm.js";
+import NavBar from "../NavBar/NavBar.js";
 import Reservation from "../Reservation/Reservation.js";
  import User from "../User/User.js";
 import {Route, BrowserRouter as Router} from "react-router-dom";
@@ -10,7 +11,9 @@ import {Route, BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (
-  
+  <>
+    <NavBar />
+
     <Router>
 
     <Route path="/" exact component={HomePage} />
@@ -19,6 +22,7 @@ function App() {
         <Route path="/reservation" exact component={Reservation} />
         <Route path="/user" exact component={User} />
    </Router>
+   </>
   );
 }
 

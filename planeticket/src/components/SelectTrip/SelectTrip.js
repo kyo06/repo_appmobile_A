@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import NavBar from "../NavBar";
 import Title from "../Title";
-// import VolsAller from "../VolsAller";
 import VolsRetour from "../VolsRetour";
 import css from "./SelectTrip.module.css";
 import {Form} from 'react-bootstrap'; 
@@ -40,7 +38,7 @@ const search = JSON.parse(localStorage.getItem("search"));
 
   return (
     <>
-    <NavBar />
+
     <Title>Résultats de votre recherche</Title>
 
     <div className={css.container}>
@@ -58,13 +56,13 @@ const search = JSON.parse(localStorage.getItem("search"));
       
         <div className={css.orange}>
 
-        <p className={css.inline} name="Date">{t.Date}</p> 
-        <p className={css.inline} name="Prix"> {t.Prix}€</p> <br/>
+        <p className={css.inline} name="Date">{t.Date} </p>
+        <input type="hidden"  name="Prix" value={t.Prix}/><label> -> {t.Prix} € </label> <br />
 
         <input className={css.radio} type="radio" name="volAller" />
       
-        <p className={css.inline} name="HeureDep"> Dép {t.HeureDep} </p> 
-        <p className={css.inline} name="HeureArr">Arr {t.HeureArr}</p>
+        <input type="hidden" name="HeureDep" value={t.HeureDep}/><label>Dép {t.HeureDep} </label>
+        <input type="hidden" name="HeureArr" value={t.HeureArr}/><label> - Arr {t.HeureArr} </label>
 
       </div>
      </> ))}

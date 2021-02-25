@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Title from "../Title";
-import NavBar from "../NavBar"
 import css from './User.module.css'
 import UserId from "../UserId"
 import Recap from "../Recap"
@@ -22,7 +21,6 @@ const User = () => {
     <>
     <div className={css.container}>
 
-    <NavBar />
     <Title>Bienvenue sur votre Profil</Title>
 
        {listUser.map((t) => (

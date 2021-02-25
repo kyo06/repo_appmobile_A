@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "../NavBar";
 import Title from "../Title";
 import Buttons from "../Buttons";
 import VolAller from "../VolAller";
@@ -32,7 +31,6 @@ const Confirm = () => {
   return (
     <>
     <div className={css.container}>
-    <NavBar />
 
     <Title>Confirmer votre réservation</Title>
 

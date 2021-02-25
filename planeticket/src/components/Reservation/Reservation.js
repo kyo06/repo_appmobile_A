@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ButtonCancel from "../ButtonCancel";
 import Title from "../Title";
-import NavBar from "../NavBar";
 import css from './Reservation.module.css'
 import Recap from "../Recap";
 
@@ -17,7 +16,7 @@ const Reservation = () => {
   return (
     <>
     <div className={css.container}>
-    <NavBar />
+  
     <Title>Récapitulatif réservation</Title>
 
     {list.map((t) => (
