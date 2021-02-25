@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Title from "../Title";
-import Buttons from "../Buttons";
 import VolAller from "../VolAller";
 import VolRetour from "../VolRetour";
-import Total from "../Total";
 import css from './Confirm.module.css'
 
 
@@ -34,14 +32,14 @@ const Confirm = () => {
 
     <Title>Confirmer votre réservation</Title>
 
-   {list.map((t) => (
+   {ListAller.map((t) => (
         <VolAller
           vols={t}
           key= {t.id} 
           />
       ))}
 
-  {list.map((t) => (
+  {ListAller.map((t) => (
         <VolRetour
           vols={t}
           key= {t.id} 
@@ -49,15 +47,26 @@ const Confirm = () => {
       ))}
 
   {list.map((t) => (
-        <Total
-          vols={t}
-          key= {t.id} 
-          />
+    
+        <>
+          <div>
+            <img src="visa.png" alt="icon visa" height="30px"/> <br />
+            <img src="mastercard.png" alt="icon visa" height="18px"/>
+          </div>
+    
+          <div>
+            <p className={css.total}>TOTAL : {(t.Prix)*(t.Adulte)*2} € </p>
+          </div>
+          <div>
+            <p className={css.italic}>Non remboursable. Modifiable sous réserve de frais. <br />
+            Le prix inclut tous les frais et taxes applicables.</p>
+          </div>
+        </>
       ))}
 
 
 
-    <Buttons>Accéder au paiement</Buttons>
+<button className={css.button} type="submit">Réserver</button>
     </div>
     </>
   );

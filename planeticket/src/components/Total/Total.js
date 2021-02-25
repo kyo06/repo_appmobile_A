@@ -11,7 +11,7 @@ const Total = ({vols}) => {
       </div>
 
       <div>
-        <p className={css.total}>TOTAL : {(vols.Prix)*(vols.NbPers)} € </p>
+        <p className={css.total}>TOTAL : {(vols.Prix)*(vols.Adulte)*2} € </p>
       </div>
       <div>
         <p className={css.italic}>Non remboursable. Modifiable sous réserve de frais. <br />
