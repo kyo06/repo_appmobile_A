@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 const TravelType = () => {
   return (
    <> 
-   <Form>
+  
     <Form.Row className="align-items-center">
       <Col xs="auto" className="my-1">
         <Form.Label className="mr-sm-2" htmlFor="inlineFormCustomSelect" srOnly>
@@ -16,6 +16,8 @@ const TravelType = () => {
           className="mr-sm-2"
           id="inlineFormCustomSelect"
           custom
+          name="Adulte"
+          
         >
           <option value="0">Adulte(s) (16+)</option>
           <option value="1">1</option>
@@ -46,7 +48,7 @@ const TravelType = () => {
         </Form.Control>
       </Col>
     </Form.Row>
-    </Form>
+   
     </>
 
   )

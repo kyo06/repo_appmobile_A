@@ -14,7 +14,10 @@ export const ListAller = [
       Prix:26,
       HeureDep:"12:35",
       HeureArr:"14:25",
-      TypePers:"Adulte",
-      NbPers:2
+      Adulte:2,
+      Enfant:0,
+      Bebe:0
     },
   ];
+
+  

@@ -10,9 +10,9 @@ const VolsRetour = ({vols}) => {
           </div>
 
           <div className={css.orange}>
-            <label>{vols.DateR + " -> " + vols.Prix} <br />
+            <label>{vols.DateR + " -> " + vols.Prix} € <br />
             Dép {vols.HeureDep + " Arr " + vols.HeureArr}</label> 
-            <input className={css.checkbox} type="checkbox" id="volsRetour" name="volsRetour" />
+            <input className={css.checkbox} type="radio" id="volsRetour" name="volsRetour" />
           </div>
     </>
   );

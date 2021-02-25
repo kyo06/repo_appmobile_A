@@ -1,70 +1,92 @@
 import React, {useState} from "react";
 import NavBar from "../NavBar";
 import Title from "../Title";
-import VolsAller from "../VolsAller";
+// import VolsAller from "../VolsAller";
 import VolsRetour from "../VolsRetour";
-import Buttons from "../Buttons";
+import css from "./SelectTrip.module.css";
+import {Form} from 'react-bootstrap'; 
+import {ListAller} from "../../utils/ListAller";
+
+
+
 
 const SelectTrip = () => {
 
-  const initialList = [
-    {
-      id:1,
-      AeroportDep:"Lyon",
-      AeroportArv:"Madrid",
-      Date:"Dim.22 Fév",
-      DateR:"Jeu.25 Fév",
-      Prix:"57,00€",
-      HeureDep:"12:35",
-      HeureArr:"14:25",
-    },
-    {
-      id:2,
-      AeroportDep:"Lyon",
-      AeroportArv:"Madrid",
-      Date:"Lun.22 Fév",
-      DateR:"Ven.26 Fév",
-      Prix:"35,00€",
-      HeureDep:"12:35",
-      HeureArr:"14:25",
-    },
-    {
-      id:3,
-      AeroportDep:"Lyon",
-      AeroportArv:"Madrid",
-      Date:"Mar.22 Fév",
-      DateR:"Sam.27 Fév",
-      Prix:"26,00€",
-      HeureDep:"12:35",
-      HeureArr:"14:25",
-    },
- 
+const search = JSON.parse(localStorage.getItem("search"));
+  
+ const selection = {
 
-    ];
+  Prix:"",
+  HeureDep:"",
+  HeureArr:""
 
-  const [list, setList] = useState(initialList);
+};
+  
+  const [form, setForm] = useState(selection);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+    localStorage.setItem("choice", JSON.stringify(form));
+  
+  }
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setForm({...form, [name]: value});
+    console.log(name, value);
+  }
 
   return (
     <>
     <NavBar />
     <Title>Résultats de votre recherche</Title>
 
-    {list.map((t) => (
-        <VolsAller
-          vols={t}
-          key= {t.id} 
-          />
-      ))}
+    <div className={css.container}>
+
+    <Form onSubmit={handleSubmit}>
+
+       <Form.Group name="selectionAller" onChange={handleChange}>
+      
+
+    {ListAller.map((t) => ( <>
+
+          <div>    
+          <p className={css.lign}><img src="miniPlane.jpg" alt="icon miniplane" height="20"/> Aller :  {search.AeroportDep + " à déstination de " + search.AeroportArv}</p>
+          </div>
+      
+        <div className={css.orange}>
+
+        <p className={css.inline} name="Date">{t.Date}</p> 
+        <p className={css.inline} name="Prix"> {t.Prix}€</p> <br/>
+
+        <input className={css.radio} type="radio" name="volAller" />
+      
+        <p className={css.inline} name="HeureDep"> Dép {t.HeureDep} </p> 
+        <p className={css.inline} name="HeureArr">Arr {t.HeureArr}</p>
+
+      </div>
+     </> ))}
+      
+      </Form.Group>
     
-    {list.map((t) => (
+      <Form.Group name="selectionRetour" onChange={handleChange}>
+
+    {ListAller.map((t) => (
         <VolsRetour
           vols={t}
           key= {t.id} 
           />
       ))}
 
+    </Form.Group>
 
-    <Buttons>Réserver</Buttons>
+  <button className={css.button} type="submit">Réserver</button>
+
+</Form>
+
+  </div>
     </>
   );
 };

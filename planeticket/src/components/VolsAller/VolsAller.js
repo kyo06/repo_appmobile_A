@@ -2,20 +2,28 @@
 import css from "./VolsAller.module.css";
 
 
-const VolsAller = ({vols, color}) => {
+const VolsAller = ({vols}) => {
 
 
 
   return (
     <>
-          <div>    
+
+            
+        <div>    
              <p className={css.lign}><img src="miniPlane.jpg" alt="icon miniplane" height="20"/> Aller :  {vols.AeroportDep + " à déstination de " + vols.AeroportArv}</p>
-          </div>
+        </div>
           
           <div className={css.orange}>
-            <label>{vols.Date + " -> " + vols.Prix} <br />
-            Dép {vols.HeureDep + " Arr " + vols.HeureArr}</label> 
-            <input className={css.checkbox} type="checkbox" id="volsAller" name="volsAller" />
+
+            <p className={css.inline} name="Date">{vols.Date}</p> 
+            <p className={css.inline} name="Prix">{vols.Prix}</p> <br/>
+
+            <input className={css.radio} type="radio" name="volAller" />
+          
+            <p className={css.inline} name="HeureDep"> Dép {vols.HeureDep} </p> 
+            <p className={css.inline} name="HeureArr">Arr {vols.HeureArr}</p>
+
           </div>
     </>
   );
