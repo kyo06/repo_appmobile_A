@@ -21,3 +21,19 @@
     margin-top: 20px;
 
 }
+
+.orange {
+    background-color: orange;
+    padding: 10px 0 0 10px;
+  }
+
+  .img{
+    float: right;
+    height: 20px;
+    padding-right: 5px;
+  }
+
+  .orangered {
+    background-color:orangered;
+    padding: 10px 0 0 10px;
+  }

@@ -11,7 +11,7 @@ export const ListAller = [
       FsArv2:"2B",
       Date:"Dim.22 Fév",
       DateR:"Jeu.25 Fév",
-      Prix:26,
+      Prix:27,
       HeureDep:"12:35",
       HeureArr:"14:25",
       Adulte:2,

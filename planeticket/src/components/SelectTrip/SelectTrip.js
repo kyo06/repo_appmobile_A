@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Title from "../Title";
-import VolsRetour from "../VolsRetour";
 import css from "./SelectTrip.module.css";
 import { Form } from "react-bootstrap";
 import { ListAller } from "../../utils/ListAller";
@@ -16,6 +15,7 @@ const SelectTrip = () => {
   };
 
   const [form, setForm] = useState(selection);
+  const [ListA, setListAller] = useState(ListAller);
 
   const history = useHistory();
 
@@ -56,9 +56,9 @@ const SelectTrip = () => {
                   <p className={css.inline} name="Date">
                     {t.Date}{" "}
                   </p>
-                  <input type="hidden" name="HeureDep" value={t.HeureDep} />
+                  <input type="hidden" name="HeureD" value={t.HeureDep} />
                   <label>Dép {t.HeureDep} </label>
-                  <input type="hidden" name="HeureArr" value={t.HeureArr} />
+                  <input type="hidden" name="HeureA" value={t.HeureArr} />
                   <label> - Arr {t.HeureArr} </label>
                   <label> - {t.Prix} € </label>{" "}
                   <input type="radio" name="PrixAller" value={t.Prix} />
