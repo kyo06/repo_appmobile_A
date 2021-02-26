@@ -3,6 +3,8 @@ import Title from "../Title";
 import VolAller from "../VolAller";
 import VolRetour from "../VolRetour";
 import css from "./Confirm.module.css";
+import { useHistory } from "react-router-dom"; 
+
 
 import { ListAller } from "../../utils/ListAller";
 
@@ -56,9 +58,9 @@ const Confirm = () => {
           </>
         ))}
 
-        <button className={css.button} type="submit">
-          Réserver
-        </button>
+          <button className={css.button} type="submit">
+            Réserver
+          </button>
       </div>
     </>
   );

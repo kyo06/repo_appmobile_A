@@ -4,22 +4,26 @@ import VolsRetour from "../VolsRetour";
 import css from "./SelectTrip.module.css";
 import { Form } from "react-bootstrap";
 import { ListAller } from "../../utils/ListAller";
+import { ListRetour } from "../../utils/ListRetour";
+import { useHistory } from "react-router-dom";
 
 const SelectTrip = () => {
   const search = JSON.parse(localStorage.getItem("search"));
 
   const selection = {
-    Prix: "",
-    HeureDep: "",
-    HeureArr: "",
+    PrixAller: "",
+    PrixRetour: "",
   };
 
   const [form, setForm] = useState(selection);
+
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
     localStorage.setItem("choice", JSON.stringify(form));
+    history.push("/confirm");
   };
 
   const handleChange = (e) => {
@@ -52,21 +56,42 @@ const SelectTrip = () => {
                   <p className={css.inline} name="Date">
                     {t.Date}{" "}
                   </p>
-                  <input type="radio" name="Prix" value={t.Prix} />
-                  <label> -> {t.Prix} € </label> <br />
-                  <input className={css.radio} type="radio" name="volAller" />
-                  <input type="radio" name="HeureDep" value={t.HeureDep} />
+                  <input type="hidden" name="HeureDep" value={t.HeureDep} />
                   <label>Dép {t.HeureDep} </label>
-                  <input type="radio" name="HeureArr" value={t.HeureArr} />
+                  <input type="hidden" name="HeureArr" value={t.HeureArr} />
                   <label> - Arr {t.HeureArr} </label>
+                  <label> - {t.Prix} € </label>{" "}
+                  <input type="radio" name="PrixAller" value={t.Prix} />
                 </div>
               </>
             ))}
           </Form.Group>
 
           <Form.Group name="selectionRetour" onChange={handleChange}>
-            {ListAller.map((t) => (
-              <VolsRetour vols={t} key={t.id} />
+            {ListRetour.map((t) => (
+              <>
+                <div>
+                  <p className={css.lign}>
+                    <img src="miniPlane.jpg" alt="icon miniplane" height="20" />{" "}
+                    Aller :{" "}
+                    {search.AeroportDep +
+                      " à déstination de " +
+                      search.AeroportArv}
+                  </p>
+                </div>
+
+                <div className={css.orange}>
+                  <p className={css.inline} name="Date">
+                    {t.Date}{" "}
+                  </p>
+                  <input type="hidden" name="HeureDep" value={t.HeureDep} />
+                  <label>Dép {t.HeureDep} </label>
+                  <input type="hidden" name="HeureArr" value={t.HeureArr} />
+                  <label> - Arr {t.HeureArr} </label>
+                  <label> - {t.Prix} € </label>{" "}
+                  <input type="radio" name="PrixRetour" value={t.Prix} />
+                </div>
+              </>
             ))}
           </Form.Group>
 

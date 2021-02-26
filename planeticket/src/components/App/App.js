@@ -8,7 +8,12 @@ import User from "../User/User.js";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
+
+    // localStorage.removeItem("search");
+    // localStorage.removeItem("choice");
+
   return (
+   
     <>
       <NavBar />
 
@@ -24,3 +29,4 @@ function App() {
 }
 
 export default App;
+
