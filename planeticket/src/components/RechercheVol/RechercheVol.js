@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Form, FormCheck, Col} from 'react-bootstrap'; 
 import "react-datepicker/dist/react-datepicker.css";
 import {ListAller} from "../../utils/ListAller";
+import {ListRetour} from "../../utils/ListRetour";
 import css from "./RechercheVol.module.css";
 
 
@@ -28,8 +29,13 @@ const searchInitial = {
 };
   
   const [form, setForm] = useState(searchInitial);
+
   const aeroports = ListAller.map((i) =>
   (<option value={i.AeroportDep}>{i.AeroportDep}</option>)
+  )
+
+  const aeroportsR = ListRetour.map((j) =>
+  (<option value={j.AeroportArv}>{j.AeroportArv}</option>)
   )
 
     const handleSubmit = (e) => {
@@ -62,7 +68,7 @@ const searchInitial = {
         <Form.Label>A</Form.Label>
           <Form.Control name="AeroportArv" onChange={handleChange} as="select">
           <option></option>
-          {aeroports}
+          {aeroportsR}
           </Form.Control>
 
           <Form.Group>
