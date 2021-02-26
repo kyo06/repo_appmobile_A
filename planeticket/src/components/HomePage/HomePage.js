@@ -1,17 +1,14 @@
-import React, {  } from "react";
+import React from "react";
 import Title from "../Title";
 import RechercheVol from "../RechercheVol";
 
-
 const HomePage = () => {
- 
-    return (
+  return (
     <>
-        
-        <Title>Trouver un Vol</Title>
-        <RechercheVol />
+      <Title>Trouver un Vol</Title>
+      <RechercheVol />
     </>
-    )
-  }
+  );
+};
 
 export default HomePage;

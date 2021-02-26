@@ -25,12 +25,13 @@ const Confirm = () => {
   };
 
   const prixTotal = {
-    PrixTotal: "",
+    PrixTotal: calculPrix(),
   };
 
-  const [form, setForm] = useState(prixTotal);
-  const [list, setList] = useState(ListAller);
-  const [Horaires, setHoraires] = useState(choice);
+  const [form] = useState(prixTotal);
+
+  // const [list, setList] = useState(ListAller);
+  // const [Horaires, setHoraires] = useState(choice);
 
   const history = useHistory();
 
@@ -41,12 +42,6 @@ const Confirm = () => {
     history.push("/reservation");
   };
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setForm({ ...form, [name]: value });
-    console.log(name, value);
-  };
 
   return (
     <>
@@ -89,7 +84,6 @@ const Confirm = () => {
             </div>
 
             <div>
-              <input type="hidden" name="PrixTotal" value={calculPrix()} />
               <label className={css.total}>TOTAL : {calculPrix()} €</label>
             </div>
             <div>

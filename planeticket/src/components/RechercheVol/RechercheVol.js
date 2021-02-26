@@ -4,30 +4,27 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ListAller } from "../../utils/ListAller";
 import { ListRetour } from "../../utils/ListRetour";
 import css from "./RechercheVol.module.css";
-import { useHistory } from "react-router-dom"; 
-
+import { useHistory } from "react-router-dom";
 
 const RechercheVol = () => {
-
- 
-
+  
   const searchInitial = {
-    AeroportDep:"",
-    NoVolDep:"",
-    FsDep:"",
-    FsDep2:"",
-    AeroportArv:"",
-    NoVolArv:"",
-    FsArv:"",
-    FsArv2:"",
-    Date:"",
-    DateR:"",
-    Prix:"",
-    HeureDep:"",
-    HeureArr:"",
-    Adulte:"0",
-    Enfant:"0",
-    Bebe:"0",
+    AeroportDep: "",
+    NoVolDep: "",
+    FsDep: "",
+    FsDep2: "",
+    AeroportArv: "",
+    NoVolArv: "",
+    FsArv: "",
+    FsArv2: "",
+    Date: "",
+    DateR: "",
+    Prix: "",
+    HeureDep: "",
+    HeureArr: "",
+    Adulte: "0",
+    Enfant: "0",
+    Bebe: "0",
     Direct: false,
   };
 
@@ -156,7 +153,6 @@ const RechercheVol = () => {
           <button className={css.button} type="submit">
             Afficher les vols ...
           </button>
-
         </Form>
       </div>
     </>

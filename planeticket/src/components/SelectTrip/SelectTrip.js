@@ -15,14 +15,12 @@ const SelectTrip = () => {
   };
 
   const [form, setForm] = useState(selection);
-  const [ListA, setListAller] = useState(ListAller);
 
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
-    localStorage.setItem("choice", JSON.stringify(form));
     history.push("/confirm");
   };
 
